@@ -8,9 +8,6 @@ public class BeanDefinition {
     public BeanDefinition() {
     }
 
-    public BeanDefinition(Object bean) {
-        this.bean = bean;
-    }
     public Object getBean() {
         return bean;
     }
@@ -25,6 +22,11 @@ public class BeanDefinition {
 
     public void setBeanClassName(String beanClassName) {
         this.beanClassName = beanClassName;
+        try {
+            this.beanClass = Class.forName(beanClassName);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public Class getBeanClass() {

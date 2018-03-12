@@ -29,7 +29,10 @@ public abstract class AbstractBeanFactory implements BeanFactory {
      */
     @Override
     public void registerBeanDefinition(String name, BeanDefinition beanDefinition) {
-        if (null != beanDefinition) {
+        Object object = doCreateBean(beanDefinition);
+        beanDefinition.setBean(object);
+        beanDefinitionMap.put(name,beanDefinition);
+        /*if (null != beanDefinition) {
             if(null==beanDefinition.getBean()){
                 Object o = doCreateBean(beanDefinition);
                 beanDefinition.setBean(o);
@@ -38,7 +41,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
                 name = CommonUtils.getDefaultBeanName(beanDefinition);
             }
             beanDefinitionMap.put(name, beanDefinition);
-        }
+        }*/
     }
 
     /**
