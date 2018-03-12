@@ -1,7 +1,6 @@
 package com.iflytek.beanfactory;
 
-import com.iflytek.BeanDefinition;
-import com.iflytek.util.CommonUtils;
+import com.iflytek.bean.BeanDefinition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -50,5 +49,5 @@ public abstract class AbstractBeanFactory implements BeanFactory {
      * @param beanDefinition
      * @return
      */
-    protected abstract Object doCreateBean(BeanDefinition beanDefinition) ;
+    protected abstract Object doCreateBean(BeanDefinition beanDefinition);
 }

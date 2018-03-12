@@ -1,6 +1,6 @@
 package com.iflytek.beanfactory;
 
-import com.iflytek.BeanDefinition;
+import com.iflytek.bean.BeanDefinition;
 
 public interface BeanFactory {
     /**
